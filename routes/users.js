@@ -48,9 +48,9 @@ router.get('/getTraining', function (req, res) {
 
 
 
-router.get('/getTrainingBySubject', function (req, res) {
+router.post('/getTrainingBySubject', function (req, res) {
 
-  TrainingCourse.find({ subject: req.params.subject }, function (err, result) {
+  TrainingCourse.find({ subject: req.body.subject }, function (err, result) {
     if (err) {
       res.json({ status: "ERROR", msg: "Getting issue", err: err });
     } else {
@@ -62,9 +62,9 @@ router.get('/getTrainingBySubject', function (req, res) {
 
 
 
-router.get('/getTrainingByStream', function (req, res) {
+router.post('/getTrainingByStream', function (req, res) {
 
-  TrainingCourse.find({ stream: req.params.stream }, function (err, result) {
+  TrainingCourse.find({ stream: req.body.stream }, function (err, result) {
     if (err) {
       res.json({ status: "ERROR", msg: "Getting issue", err: err });
     } else {
@@ -77,9 +77,9 @@ router.get('/getTrainingByStream', function (req, res) {
 
 
 
-router.get('/getTrainingByType', function (req, res) {
+router.post('/getTrainingByType', function (req, res) {
 
-  TrainingCourse.find({ type: req.params.type }, function (err, result) {
+  TrainingCourse.find({ type: req.body.type }, function (err, result) {
     if (err) {
       res.json({ status: "ERROR", msg: "Getting issue", err: err });
     } else {
@@ -88,7 +88,6 @@ router.get('/getTrainingByType', function (req, res) {
   })
 
 });
-
 
 
 
